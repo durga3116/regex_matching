@@ -1,0 +1,76 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Results</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color:lightskyblue;
+            margin: 0;
+            padding: 0;
+            display: flexbox;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        div.result-container {
+            background-color:darkred;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, p {
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 9px;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: gold;
+            font-weight: bolder;
+        }
+
+        a:hover {
+            text-decoration: dotted;
+        }
+
+        .matched-strings {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: lavender;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Regex Results</h1>
+        <p>Test String: {{ test_string }}</p>
+        <p>Regex Pattern: {{ regex_pattern }}</p>
+
+        {% if matched_strings %}
+            <h2>Matched Strings:</h2>
+            <p class="matched-strings">{{ ', '.join(matched_strings) }}</p>
+        {% else %}
+            <p>No matches found.</p>
+        {% endif %}
+
+        <a href="/">Back to Input</a>
+    </div>
+</body>
+</html>
